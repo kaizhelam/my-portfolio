@@ -126,7 +126,7 @@ footer {
 
   background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
-  
+
 }
 
 footer a {
@@ -184,83 +184,85 @@ footer a {
 /* ===========================
    TIMELINE (Experience & Education)
    =========================== */
-   .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: #2575fc;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  /* adjust spacing */
+  top: 20px;
+  border: 3px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.timeline-text h3 {
+  margin: 0;
+}
+
+.timeline-text span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.timeline-img {
+  width: 150px;
+  /* image width */
+  flex-shrink: 0;
+}
+
+.timeline-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
   .timeline-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .timeline-dot {
-    width: 14px;
-    height: 14px;
-    background: #2575fc;
-    border-radius: 50%;
-    position: absolute;
-    left: -10px; /* adjust spacing */
-    top: 20px;
-    border: 3px solid white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  }
-  
+
   .timeline-text {
-    flex: 1;
-    padding-right: 20px;
+    padding-right: 0;
+    margin-bottom: 15px;
   }
-  
-  .timeline-text h3 {
-    margin: 0;
-  }
-  
-  .timeline-text span {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
+
   .timeline-img {
-    width: 150px; /* image width */
-    flex-shrink: 0;
+    width: 180px;
   }
-  
-  .timeline-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
   }
-  
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .timeline-item {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .timeline-text {
-      padding-right: 0;
-      margin-bottom: 15px;
-    }
-  
-    .timeline-img {
-      width: 180px;
-    }
-  
-    .timeline-dot {
-      left: 50%;
-      transform: translateX(-50%);
-      top: -10px;
-    }
-  }
-  
+}
+
 
 
 /* ===========================
@@ -289,8 +291,10 @@ footer a {
 
 .certificate-img {
   width: 100%;
-  height: auto; /* FULL IMAGE VISIBLE */
-  object-fit: contain; /* No cropping */
+  height: auto;
+  /* FULL IMAGE VISIBLE */
+  object-fit: contain;
+  /* No cropping */
   background: #f3f3f3;
   padding: 10px;
 }
@@ -321,4 +325,25 @@ footer a {
   border-radius: 5px;
 }
 
+/* ===========================
+   MINI APPS GRID
+/* MINI APPS GRID (2x2) */
+.mini-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .mini-apps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mini-apps-grid {
+    grid-template-columns: 1fr;
+  }
+}
